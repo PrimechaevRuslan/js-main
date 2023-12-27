@@ -36,78 +36,122 @@
 // 
 
 // Задание 2
+// class HtmlElement {
+//     constructor(tagName, isSelfClosing = false, textContent = '', attributes = [], styles = [], nestedElements = []) {
+//         this.tagName = tagName;
+//         this.isSelfClosing = isSelfClosing;
+//         this.textContent = textContent;
+//         this.attributes = attributes;
+//         this.styles = styles;
+//         this.nestedElements = nestedElements;
+//     }
+
+//     setAttribute(attribute) {
+//         this.attributes.push(attribute);
+//     }
+
+//     setStyle(style) {
+//         this.styles.push(style);
+//     }
+
+//     appendNestedElement(element) {
+//         this.nestedElements.push(element);
+//     }
+
+//     prependNestedElement(element) {
+//         this.nestedElements.unshift(element);
+//     }
+
+//     getHtml() {
+//         let html = `<${this.tagName}`;
+
+//         // Add attributes
+//         for (const attribute of this.attributes) {
+//             html += ` ${attribute}`;
+//         }
+
+//         // Add styles
+//         if (this.styles.length > 0) {
+//             html += ` style="${this.styles.join('; ')}"`;
+//         }
+
+//         if (this.isSelfClosing) {
+//             html += ' />';
+//         } else {
+//             html += '>';
+
+//             // Add text content
+//             html += this.textContent;
+
+//             // Add nested elements
+//             for (const element of this.nestedElements) {
+//                 html += element.getHtml();
+//             }
+
+//             html += `</${this.tagName}>`;
+//         }
+
+//         return html;
+//     }
+// }
+
+// // Create the desired block
+// const wrapper = new HtmlElement('div');
+// const heading = new HtmlElement('h1', false, 'Hello, World!');
+// const paragraph = new HtmlElement('p', false, 'This is a paragraph.');
+// const link = new HtmlElement('a', false, 'Click me!', ['href="https://example.com"']);
+// const image = new HtmlElement('img', true, '', ['src="image.jpg"', 'alt="Image"']);
+
+// wrapper.appendNestedElement(heading);
+// wrapper.appendNestedElement(paragraph);
+// wrapper.appendNestedElement(link);
+// wrapper.appendNestedElement(image);
+
+// // Add the block to the page
+// document.write(wrapper.getHtml());
+
+// // 
+
 class HtmlElement {
-    constructor(tagName, isSelfClosing = false, textContent = '', attributes = [], styles = [], nestedElements = []) {
-        this.tagName = tagName;
-        this.isSelfClosing = isSelfClosing;
-        this.textContent = textContent;
-        this.attributes = attributes;
+    constructor(tag, selfClose = false, text = '', atribs = [], styles = [], nestedElems = []) {
+        this.tag = tag;
+        this.selfClose = selfClose;
+        this.text = text;
+        this.atribs = atribs;
         this.styles = styles;
-        this.nestedElements = nestedElements;
+        this.nestedElems = nestedElems;
     }
 
-    setAttribute(attribute) {
-        this.attributes.push(attribute);
+    set atribs(value) {
+        this.atribs.push(value);
     }
 
-    setStyle(style) {
-        this.styles.push(style);
+    set styles(value) {
+        this.styles.push(value);
     }
 
-    appendNestedElement(element) {
-        this.nestedElements.push(element);
+    addTail(elem) {
+        this.nestedElems.push(elem);
     }
 
-    prependNestedElement(element) {
-        this.nestedElements.unshift(element);
+    addHead(elem) {
+        this.nestedElems.unshfit(elem);
     }
 
     getHtml() {
-        let html = `<${this.tagName}`;
+        let code = this.tag;
 
-        // Add attributes
-        for (const attribute of this.attributes) {
-            html += ` ${attribute}`;
+        atr = this.artribs;
+
+        style = `style=""`
+        for (i in this.styles) {
+            style.join(i + ";")
+
         }
 
-        // Add styles
-        if (this.styles.length > 0) {
-            html += ` style="${this.styles.join('; ')}"`;
-        }
-
-        if (this.isSelfClosing) {
-            html += ' />';
-        } else {
-            html += '>';
-
-            // Add text content
-            html += this.textContent;
-
-            // Add nested elements
-            for (const element of this.nestedElements) {
-                html += element.getHtml();
-            }
-
-            html += `</${this.tagName}>`;
-        }
-
-        return html;
+        style += "'";
     }
 }
 
-// Create the desired block
-const wrapper = new HtmlElement('div');
-const heading = new HtmlElement('h1', false, 'Hello, World!');
-const paragraph = new HtmlElement('p', false, 'This is a paragraph.');
-const link = new HtmlElement('a', false, 'Click me!', ['href="https://example.com"']);
-const image = new HtmlElement('img', true, '', ['src="image.jpg"', 'alt="Image"']);
 
-wrapper.appendNestedElement(heading);
-wrapper.appendNestedElement(paragraph);
-wrapper.appendNestedElement(link);
-wrapper.appendNestedElement(image);
-
-// Add the block to the page
-document.write(wrapper.getHtml());
-
-// 
+let a = new HtmlElement('p', false, 'Hello World', ["id=wrapper"], ['display:flex'], []);
