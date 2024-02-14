@@ -1,0 +1,28 @@
+.like {
+    width: 3.2vh;
+    height: 3.2vh;
+    position: relative;
+    right: 1vh;
+    color: white;
+}
+
+#likediv {
+    background: royalblue;
+    position: relative;
+    width: 12.8vh;
+    height: 4.4vh;
+    border-radius: .8vh;
+    display: flex;
+    padding: 1vh 3vh;
+    cursor: pointer;
+}
+
+span {
+    font-size: 3.2vh;
+    font-family: fantasy;
+}
+
+#likecount{
+    font-size: 3.2vh;
+    margin-left: 2.7vh;
+}

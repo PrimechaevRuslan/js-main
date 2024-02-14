@@ -1,0 +1,13 @@
+.head {
+    background: royalblue;
+    height: 10vh;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
