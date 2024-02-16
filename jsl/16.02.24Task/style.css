@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background: rgb(199, 59, 59);
+    position: relative;
+    width: auto;
+    height: 20vh;
+}
+
+
+h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add {
+    display: flex;
+    position: relative;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+#task {
+    font-size: 3vh;
+    height: 5vh;
+    size: 30vh;
+    outline: none;
+    border-radius: 2vh;
+    border: none;
+    margin-right: 2vh;
+}
+
+#add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vh;
+    text-decoration: none;
+    color: #000;
+    /* border: 1px solid; */
+    font-size: 3vh;
+    padding: 0.9vh 1vh;
+    background-color: #FFFFFF;
+    transition: .1s ease-in-out;
+}
+
+#add-btn:hover {
+    background-color: royalblue;
+}
+ 
+#close-btn {
+    font-family: serif;
+}
+
+#close-img {
+    width: 2vh;
+    height: 2vh;
+    position: absolute;
+    right: 1vh;
+    top: 2vh;
+    display: inline-block;
+    /* background-color: red; */
+}
+
+
+
+.item {
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 6vh;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 1px solid; */
+    font-size: 3vh;
+    padding-left: 1vh;
+    cursor: pointer;
+    background-color: white;
+    
+}
+
+.item:hover {
+    background-color: #adadad;
+    
+}
+
+.checked {
+    background-color: gray;
+    color: white;
+    text-decoration: line-through;
+    
+}
